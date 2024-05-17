@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aluguel de Carros</title>
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="/Front/aluga.css">
+    <!-- Box Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-lmvn1gd0nClPg4W1LG2EN1U+5umt6hOT1rbldF/kkTxoGXAMG4C/LS5gY9WMF3rP" crossorigin="anonymous">
+
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <div class="nav container">
+            <i class='bx bx-menu' id="menu-icon"></i>
+            <a href="#" class="logo">Out<span>Car</span></a>
+            <ul class="navbar">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="aluga.html">Aluga</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Aluguel Section -->
+    <section class="aluguel" id="aluguel">
+        <div class="heading">
+            <span>Alugue um Carro</span>
+            <h2>Escolha seu carro e preencha os detalhes</h2>
+        </div>
+        <div class="aluguel-container container">
+            <form id="aluguel-form">
+                <div class="carro">
+                    <label for="carro">Carro:</label>
+                    <select id="carro" name="carro">
+                        <option value="Ferrari" data-preco="5000">Ferrari (R$5,000,00 a diária)</option>
+                        <option value="Porsche" data-preco="4000">Porsche (R$4,000,00 a diária)</option>
+                        <option value="Uno" data-preco="15.5">Uno de Escada (R$15,50 a diária)</option>
+                        <option value="Cruze" data-preco="350">Cruze (R$350,00 a diária)</option>
+                        <option value="Gol" data-preco="60">Gol Quadrado (R$60,00 a diária)</option>
+                    </select>
+                </div>
+                <div class="dias">
+                    <label for="dias">Quantidade de dias:</label>
+                    <input type="number" id="dias" name="dias" min="1" required>
+                </div>
+                <div class="datas">
+                    <label for="data-retirada">Data de Retirada:</label>
+                    <input type="date" id="data-retirada" name="data-retirada" required>
+                </div>
+                <div class="datas">
+                    <label for="data-entrega">Data de Entrega:</label>
+                    <input type="date" id="data-entrega" name="data-entrega" required>
+                </div>
+                <div class="info-pessoal">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div class="info-pessoal">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="info-pessoal">
+                    <label for="estado-civil">Estado Civil:</label>
+                    <select id="estado-civil" name="estado-civil" required>
+                        <option value="solteiro">Solteiro(a)</option>
+                        <option value="casado">Casado(a)</option>
+                        <option value="divorciado">Divorciado(a)</option>
+                        <option value="viuvo">Viúvo(a)</option>
+                    </select>
+                </div>
+                <div class="info-pessoal">
+                    <label for="telefone">Número para Contato:</label>
+                    <input type="tel" id="telefone" name="telefone" required>
+                </div>
+                <div class="resumo">
+                    <h3>Resumo do Pedido</h3>
+                    <p id="resumo-pedido">Total: R$0,00</p>
+                </div>
+                <button type="button" class="btn" id="finalizar-btn">Finalizar Pedido</button>
+            </form>
+
+            <div class="container">
+                <h2>Pedidos Feitos</h2>
+                <div class="search">
+                    <input type="text" id="searchInput" placeholder="Pesquisar por nome do cliente...">
+                    <button onclick="searchFunction()" class="btn-red">Pesquisar</button>
+                </div>
+                <table id="ordersTable">
+                    <thead>
+                        <tr>
+                            <th>ID do Pedido</th>
+                            <th>Carro Alugado</th>
+                            <th>Nome do Cliente</th>
+                            <th>Data de Início</th>
+                            <th>Data de Entrega</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Aqui serão exibidos os pedidos -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pedidos">
+                <h3>Pedidos Feitos</h3>
+                <ul id="lista-pedidos"></ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Link to JS -->
+    <script src="/JS/aluga.js"></script>
+</body>
+</html>
