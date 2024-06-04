@@ -20,7 +20,6 @@ window.onscroll = () => {
 }
 
 
-
 //header
 let header = document.querySelector('header');
 
